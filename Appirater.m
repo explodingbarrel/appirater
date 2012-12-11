@@ -144,11 +144,26 @@ static id<AppiraterDelegate> _delegate;
 }
 
 - (void)showRatingAlert {
-	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:APPIRATER_MESSAGE_TITLE
-														 message:APPIRATER_MESSAGE
-														delegate:self
-											   cancelButtonTitle:APPIRATER_CANCEL_BUTTON
-											   otherButtonTitles:APPIRATER_RATE_BUTTON, APPIRATER_RATE_LATER, nil];
+	UIAlertView *alertView = nil;
+    
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        alertView = [[UIAlertView alloc] initWithTitle:APPIRATER_MESSAGE_TITLE
+                                               message:APPIRATER_MESSAGE
+                                              delegate:self
+                                     cancelButtonTitle:APPIRATER_RATE_LATER
+                                     otherButtonTitles:APPIRATER_RATE_BUTTON, nil];
+    }
+    else
+    {
+        alertView = [[UIAlertView alloc] initWithTitle:APPIRATER_MESSAGE_TITLE
+                                   message:APPIRATER_MESSAGE
+                                  delegate:self
+                         cancelButtonTitle:APPIRATER_CANCEL_BUTTON
+                         otherButtonTitles:APPIRATER_RATE_BUTTON, APPIRATER_RATE_LATER, nil];
+    }
+    
 	self.ratingAlert = alertView;
 	[alertView show];
 	
@@ -377,7 +392,18 @@ static id<AppiraterDelegate> _delegate;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	
+    
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        // convert buttonIndex
+        if (buttonIndex == 0) {
+            buttonIndex = 2;
+        }
+    }
+    
+    if (_debug)
+        NSLog(@"APPIRATER clicked %d", buttonIndex);
+    
 	switch (buttonIndex) {
 		case 0:
 		{

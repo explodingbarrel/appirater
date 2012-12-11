@@ -49,31 +49,38 @@ extern "C"
     void _Appirater_SetTitle( const char* str )
     {
         kTitle = [NSString stringWithUTF8String:str];
+        [kTitle retain];
     }
     
     void _Appirater_SetMessage( const char* str )
     {
         kMessage = [NSString stringWithUTF8String:str];
+       [kMessage retain];
     }
     
     void _Appirater_SetCancelButton( const char* str )
     {
         kCancelButton = [NSString stringWithUTF8String:str];
+       [kCancelButton retain];
     }
     
     void _Appirater_SetRateButton( const char* str )
     {
         kRateButton = [NSString stringWithUTF8String:str];
+        [kRateButton retain];
     }
     
-    void _Appirater_SetLaterButton( const char* str)
+    void _Appirater_SetRemindButton( const char* str)
     {
         kLaterButton = [NSString stringWithUTF8String:str];
+        [kLaterButton retain];
     }
     
     void _Appirater_SetAppId( const char* appId)
     {
-        [Appirater setAppId:[NSString stringWithUTF8String:appId]];
+        NSString* str = [NSString stringWithUTF8String:appId];
+        [str retain];
+        [Appirater setAppId:str];
         if (_delegate == nil)
         {
             _delegate = [MyAppiraterDelegate alloc];

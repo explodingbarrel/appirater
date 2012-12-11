@@ -11,7 +11,7 @@
 		F49919B31676FC1700F21A57 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = F499196E1676FC1700F21A57 /* Appirater.m */; };
 		F49919B51676FC9000F21A57 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F49919B41676FC9000F21A57 /* CoreGraphics.framework */; };
 		F49919B71676FCAF00F21A57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F49919B61676FCAF00F21A57 /* UIKit.framework */; };
-		F49919B91676FD1400F21A57 /* appiraterplugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = F49919B81676FD1400F21A57 /* appiraterplugin.mm */; };
+		F49919B91676FD1400F21A57 /* AppiraterPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = F49919B81676FD1400F21A57 /* AppiraterPlugin.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,7 +36,7 @@
 		F49919A31676FC1700F21A57 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F49919B41676FC9000F21A57 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F49919B61676FCAF00F21A57 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		F49919B81676FD1400F21A57 /* appiraterplugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = appiraterplugin.mm; sourceTree = "<group>"; };
+		F49919B81676FD1400F21A57 /* AppiraterPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppiraterPlugin.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				F49919621676FBF800F21A57 /* Supporting Files */,
-				F49919B81676FD1400F21A57 /* appiraterplugin.mm */,
+				F49919B81676FD1400F21A57 /* AppiraterPlugin.mm */,
 			);
 			path = appirater;
 			sourceTree = "<group>";
@@ -174,7 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F49919B31676FC1700F21A57 /* Appirater.m in Sources */,
-				F49919B91676FD1400F21A57 /* appiraterplugin.mm in Sources */,
+				F49919B91676FD1400F21A57 /* AppiraterPlugin.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
